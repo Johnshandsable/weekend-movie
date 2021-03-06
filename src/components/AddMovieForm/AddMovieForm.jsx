@@ -16,9 +16,9 @@ function AddMovieForm() {
   */
   return (
     <form>
-      <input type="text" placeholder="title" />
-      <input type="text" placeholder="poster_url" />
-      <textarea rows="4" cols="50" />
+      <input type="text" placeholder="title" /> <br />
+      <input type="text" placeholder="poster_url" /> <br />
+      <textarea placeholder="description" rows="4" cols="50" /> <br />
       <select name="genre" id="genres">
         <option value="Adventure">Adventure</option>
         <option value="Animated">Animated</option>
@@ -33,8 +33,10 @@ function AddMovieForm() {
         <option value="Science Fiction">Science Fiction</option>
         <option value="Space-Opera">Space-Opera</option>
         <option value="Superhero">Superhero</option>
-      </select>
-      <button></button>
+      </select>{' '}
+      <br />
+      <button>Cancel</button> <br />
+      <button>Save</button>
     </form>
   );
 }
