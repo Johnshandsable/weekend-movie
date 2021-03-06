@@ -6,6 +6,11 @@ function Details() {
   const movie = useSelector((store) => store.singleMovie);
   const history = useHistory();
 
+  // HANDLES THE USER GOING TO DETAILS PAGE WITHOUT CLICKING
+  if (movie.any === undefined) {
+    history.push('/');
+  }
+
   const handleClick = () => {
     history.push('/');
   };
