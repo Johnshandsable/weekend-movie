@@ -15,18 +15,18 @@ function AddMovieForm() {
 
   const handleSave = (evt) => {
     evt.preventDefault();
-    console.log('New Movie being added', newMovie);
+
     console.table(newMovie);
+    dispatch({
+      type: 'ADD_MOVIE',
+      payload: newMovie,
+    });
     setNewMovie({
       title: '',
       poster: '',
       description: '',
       genre: '',
     });
-    // dispatch({
-    //   type: 'ADD_MOVIE',
-    //   payload: newMovie,
-    // });
   };
 
   const handleCancel = () => {
@@ -39,7 +39,7 @@ function AddMovieForm() {
     newMovie[property] = event.target.value; // OK
     console.log('value', newMovie[property]);
 
-    setNewMovie({ ...newMovie, newMovie }); // SOMETHING GOES WRONG
+    setNewMovie({ ...newMovie, property: newMovie[property] }); // SOMETHING GOES WRONG
     console.log(newMovie);
   };
 
@@ -48,26 +48,26 @@ function AddMovieForm() {
       <input
         type="text"
         name="title"
-        onChange={handleChange}
         placeholder="title"
         value={newMovie.title}
+        onChange={handleChange}
       />{' '}
       <br />
       <input
         type="text"
         name="poster"
-        onChange={handleChange}
         placeholder="poster_url"
         value={newMovie.poster}
+        onChange={handleChange}
       />{' '}
       <br />
       <textarea
         name="description"
-        onChange={handleChange}
         placeholder="description"
         rows="4"
         cols="50"
         value={newMovie.description}
+        onChange={handleChange}
       />{' '}
       <br />
       <select name="genre" onChange={handleChange} id="genres">
