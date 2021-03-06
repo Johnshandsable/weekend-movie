@@ -43,7 +43,7 @@ function* fetchOneMovie(action) {
 function* addMovie(action) {
   try {
     yield axios.post('/api/movie', action.payload);
-    // yield put({ type: 'FETCH_MOVIES' });
+    yield put({ type: 'FETCH_MOVIES' });
   } catch (err) {
     console.error('error posting to database/redux', err);
   }
