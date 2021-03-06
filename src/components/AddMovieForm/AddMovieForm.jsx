@@ -1,25 +1,67 @@
+import { useHistory } from 'react-router-dom';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+
 function AddMovieForm() {
-  /*
-  1	Adventure
-  2	Animated
-  3	Biographical
-  4	Comedy
-  5	Disaster
-  6	Drama
-  7	Epic
-  8	Fantasy
-  9	Musical
-  10	Romantic
-  11	Science Fiction
-  12	Space-Opera
-  13	Superhero
-  */
+  const history = useHistory();
+  const dispatch = useDispatch();
+
+  let [newMovie, setNewMovie] = useState({
+    title: '',
+    poster: '',
+    description: '',
+    genre: '',
+  });
+
+  const handleSave = (evt) => {
+    evt.preventDefault();
+    console.log('New Movie being added', newMovie);
+    dispatch({
+      type: 'ADD_MOVIE',
+      payload: newMovie,
+    });
+  };
+
+  const handleCancel = () => {
+    history.push('/');
+  };
+
+  const handleChange = (event) => {
+    const property = event.target.name;
+    newMovie[property] = event.target.value;
+    console.log(newMovie[property]);
+    setNewMovie({ ...newMovie, newMovie });
+  };
+
   return (
-    <form>
-      <input type="text" placeholder="title" /> <br />
-      <input type="text" placeholder="poster_url" /> <br />
-      <textarea placeholder="description" rows="4" cols="50" /> <br />
-      <select name="genre" id="genres">
+    <form
+      onSubmit={(evt) => {
+        handleSave(evt);
+      }}
+    >
+      <input
+        type="text"
+        onChange={handleChange}
+        name="title"
+        placeholder="title"
+      />{' '}
+      <br />
+      <input
+        type="text"
+        onChange={handleChange}
+        name="poster"
+        placeholder="poster_url"
+      />{' '}
+      <br />
+      <textarea
+        name="description"
+        onChange={handleChange}
+        placeholder="description"
+        rows="4"
+        cols="50"
+      />{' '}
+      <br />
+      <select name="genre" onChange={handleChange} id="genres">
         <option value="Adventure">Adventure</option>
         <option value="Animated">Animated</option>
         <option value="Biography">Biography</option>
@@ -35,8 +77,15 @@ function AddMovieForm() {
         <option value="Superhero">Superhero</option>
       </select>{' '}
       <br />
-      <button>Cancel</button> <br />
-      <button>Save</button>
+      <button
+        onClick={() => {
+          handleCancel();
+        }}
+      >
+        Cancel
+      </button>{' '}
+      <br />
+      <button type="submit">Save</button>
     </form>
   );
 }

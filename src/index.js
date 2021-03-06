@@ -15,6 +15,7 @@ import axios from 'axios';
 function* rootSaga() {
   yield takeEvery('FETCH_MOVIES', fetchAllMovies);
   yield takeEvery('FETCH_MOVIE', fetchOneMovie);
+  yield takeEvery('ADD_MOVIE', addMovie);
 }
 
 function* fetchAllMovies() {
@@ -36,6 +37,15 @@ function* fetchOneMovie(action) {
     yield put({ type: 'SET_MOVIE', payload: movie.data });
   } catch (err) {
     console.error('error fetching one movie', err);
+  }
+}
+
+function* addMovie(action) {
+  try {
+    yield axios.post('/api/movie', action.payload);
+    yield put({ type: 'FETCH_MOVIES' });
+  } catch (err) {
+    console.error('error posting to database/redux', err);
   }
 }
 
