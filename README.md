@@ -35,6 +35,7 @@ This application is a full-stack application allowing users to view movies from 
 
 ## Built With
 
+- [Material UI](https://material-ui.com/)
 - [Node.js](https://nodejs.org/en/)
 - [NPM](https://www.npmjs.com/)
 - [Postico](https://eggerapps.at/postico/)
