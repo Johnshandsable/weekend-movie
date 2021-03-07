@@ -42,7 +42,8 @@ function MovieItem({ movie }) {
       type: 'FETCH_MOVIE',
       payload: movie,
     });
-    history.push('/details');
+    // ${movie.id}
+    // history.push(`/details/`);
   };
 
   return (
