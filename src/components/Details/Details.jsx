@@ -10,10 +10,10 @@ import Typography from '@material-ui/core/Typography';
 
 function Details() {
   const history = useHistory();
-  const [movie, setMovie] = useState([]);
-  const movieFromStore = useSelector((store) => store.singleMovie);
-  useEffect(() => {
-    setMovie(movieFromStore || { title: '', poster: '' });
+  const [movie, setMovie] = useState();
+  useEffect(async () => {
+    const movieFromStore = await useSelector((store) => store.singleMovie);
+    setMovie(movieFromStore);
   }, []);
 
   // HANDLES THE USER GOING TO DETAILS PAGE WITHOUT CLICKING
@@ -33,14 +33,13 @@ function Details() {
     },
   }));
 
+  console.log(movie);
+
   const classes = useStyles();
 
   const handleClick = () => {
     history.push('/');
   };
-
-  console.log('movie is', movie[0]);
-  console.table(movie);
 
   return (
     <>
@@ -56,10 +55,10 @@ function Details() {
           <Paper elevation={3}>
             <Typography variant="h3">HELLOOO</Typography>
             {/* <img
-          onClick={() => handleImageClick({ movie })}
-          src={movie.poster}
-          alt={movie.title}
-        /> */}
+              onClick={() => handleImageClick({ movie })}
+              src={movieFromStore[0].poster}
+              alt={movieFromStore[0].title}
+            /> */}
             {/* <h3>{movie[0].title}</h3>
             <img src={movie[0].poster} alt={movie.title}></img>
             <p>{movie[0].description}</p> */}

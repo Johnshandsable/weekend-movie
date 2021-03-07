@@ -6,7 +6,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 
 // Provider allows us to use redux within our react app
 import { Provider } from 'react-redux';
-import history from './history';
+// import history from './history';
 import logger from 'redux-logger';
 
 // Import saga middleware
@@ -32,9 +32,9 @@ function* fetchAllMovies() {
   }
 }
 
-function forwardTo(location) {
-  history.push(location);
-}
+// function forwardTo(location) {
+//   history.push(location);
+// }
 
 function* fetchOneMovie(action) {
   try {
@@ -42,7 +42,7 @@ function* fetchOneMovie(action) {
     const movie = yield axios.get(`/api/movie/${movieId}`);
     console.log('GOT A DATABASE RESPONSE - ', movie.data);
     yield put({ type: 'SET_MOVIE', payload: movie.data });
-    yield call(forwardTo, '/details');
+    // yield call(forwardTo, '/details');
   } catch (err) {
     console.error('error fetching one movie', err);
   }

@@ -13,6 +13,7 @@ import {
   MenuItem,
   Select,
   TextField,
+  Typography,
 } from '@material-ui/core';
 
 function AddMovieForm() {
@@ -71,6 +72,7 @@ function AddMovieForm() {
         alignItems="center"
       >
         <Grid item xs={3}>
+          <Typography variant="h5">Add Movie</Typography>
           <FormControl
             onSubmit={handleSave}
             className={classes.formControl}
