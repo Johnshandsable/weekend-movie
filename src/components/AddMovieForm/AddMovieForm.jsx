@@ -2,6 +2,7 @@ import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
+// MATERIAL UI
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Button,
@@ -23,6 +24,9 @@ function AddMovieForm() {
       margin: theme.spacing(2),
       minWidth: 120,
     },
+    whiteFont: {
+      color: '#fff',
+    },
   }));
 
   /* VARIABLES */
@@ -37,6 +41,7 @@ function AddMovieForm() {
     genre_id: 1,
   });
 
+  // Handles saving a new movie to the database
   const handleSave = (evt) => {
     evt.preventDefault();
     dispatch({
@@ -51,14 +56,16 @@ function AddMovieForm() {
     });
   };
 
+  // If the user clicks the cancel button, it navigates them back to the landing page
   const handleCancel = () => {
     history.push('/');
   };
 
+  // Handles all changes made to inputs and updates the local state before sending to redux
   const handleChange = (event) => {
     const property = event.target.name; // OK
     newMovie[property] = event.target.value; // OK
-    setNewMovie({ ...newMovie }); // SOMETHING GOES WRONG
+    setNewMovie({ ...newMovie });
   };
 
   return (
@@ -72,7 +79,12 @@ function AddMovieForm() {
         alignItems="center"
       >
         <Grid item xs={3}>
-          <Typography variant="h5">Add Movie</Typography>
+          <Typography
+            variant="h5"
+            style={{ fontFamily: 'Spicy Rice', color: '#dfe6e9' }}
+          >
+            Add Movie
+          </Typography>
           <FormControl
             onSubmit={handleSave}
             className={classes.formControl}
@@ -132,6 +144,7 @@ function AddMovieForm() {
               <MenuItem value={13}>Superhero</MenuItem>
             </Select>{' '}
             <Button
+              variant="outlined"
               color="secondary"
               onClick={() => {
                 handleCancel();
@@ -139,12 +152,20 @@ function AddMovieForm() {
             >
               Cancel
             </Button>{' '}
-            <Button color="primary" type="submit">
+            <Button color="primary" variant="outlined" type="submit">
               Save
             </Button>
           </FormControl>
         </Grid>
       </Grid>
+      {/* An SVG which styles the bottom of the page */}
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#a29bfe"
+          fill-opacity="1"
+          d="M0,256L0,64L36.9,64L36.9,32L73.8,32L73.8,128L110.8,128L110.8,0L147.7,0L147.7,256L184.6,256L184.6,96L221.5,96L221.5,64L258.5,64L258.5,224L295.4,224L295.4,224L332.3,224L332.3,160L369.2,160L369.2,96L406.2,96L406.2,192L443.1,192L443.1,192L480,192L480,160L516.9,160L516.9,288L553.8,288L553.8,128L590.8,128L590.8,288L627.7,288L627.7,32L664.6,32L664.6,32L701.5,32L701.5,288L738.5,288L738.5,288L775.4,288L775.4,160L812.3,160L812.3,128L849.2,128L849.2,160L886.2,160L886.2,288L923.1,288L923.1,288L960,288L960,160L996.9,160L996.9,64L1033.8,64L1033.8,160L1070.8,160L1070.8,96L1107.7,96L1107.7,224L1144.6,224L1144.6,64L1181.5,64L1181.5,96L1218.5,96L1218.5,128L1255.4,128L1255.4,320L1292.3,320L1292.3,128L1329.2,128L1329.2,160L1366.2,160L1366.2,64L1403.1,64L1403.1,32L1440,32L1440,320L1403.1,320L1403.1,320L1366.2,320L1366.2,320L1329.2,320L1329.2,320L1292.3,320L1292.3,320L1255.4,320L1255.4,320L1218.5,320L1218.5,320L1181.5,320L1181.5,320L1144.6,320L1144.6,320L1107.7,320L1107.7,320L1070.8,320L1070.8,320L1033.8,320L1033.8,320L996.9,320L996.9,320L960,320L960,320L923.1,320L923.1,320L886.2,320L886.2,320L849.2,320L849.2,320L812.3,320L812.3,320L775.4,320L775.4,320L738.5,320L738.5,320L701.5,320L701.5,320L664.6,320L664.6,320L627.7,320L627.7,320L590.8,320L590.8,320L553.8,320L553.8,320L516.9,320L516.9,320L480,320L480,320L443.1,320L443.1,320L406.2,320L406.2,320L369.2,320L369.2,320L332.3,320L332.3,320L295.4,320L295.4,320L258.5,320L258.5,320L221.5,320L221.5,320L184.6,320L184.6,320L147.7,320L147.7,320L110.8,320L110.8,320L73.8,320L73.8,320L36.9,320L36.9,320L0,320L0,320Z"
+        ></path>
+      </svg>
     </>
   );
 }

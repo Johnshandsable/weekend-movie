@@ -1,8 +1,23 @@
-html {
-  background-color: #34495e;
-  color: white;
+/* Fonts  */
+
+/* latin */
+@font-face {
+  font-family: 'Spicy Rice';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/spicyrice/v9/uK_24rSEd-Uqwk4jY1RyKvi8W2gzVcY.woff2)
+    format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
 }
 
+html {
+  background-color: #2d3436;
+  color: #74b9ff;
+}
+
+/* Classes  */
 .spacing {
   margin-top: 90px;
   margin-left: 20px;
@@ -12,8 +27,7 @@ html {
 .movie {
   background-color: #2c3e50;
   box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.1);
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  border-radius: 5px;
   position: relative;
   width: 250px;
   margin: 1rem;
@@ -22,6 +36,7 @@ html {
 
 .movie-container {
   margin-top: 100px;
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
 }

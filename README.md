@@ -17,7 +17,7 @@ This application is a full-stack application allowing users to view movies from 
 
 ## Installation
 
-1. Copy and paste the `database.sql` file into Postico. The queries will set up the tables needed for the application to work.
+1. Copy and paste the `database.sql` file into Postico. The queries will set up the database and tables needed for the application to work.
 2. Open up your editor and run the `npm install` command.
 3. Run `npm run server` in your terminal
 4. Run `npm run client` in your terminal

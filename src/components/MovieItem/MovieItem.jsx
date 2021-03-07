@@ -18,14 +18,27 @@ function MovieItem({ movie }) {
         alt={movie.title}
       />
       <div className="movie-info">
-        <Typography variant="h6">{movie.title}</Typography>
+        <Typography
+          style={{ fontFamily: 'Spicy Rice', color: '#dfe6e9' }}
+          variant="h6"
+        >
+          {movie.title}
+        </Typography>
       </div>
 
       <div className="movie-overview">
-        <Typography className={classes.root} variant="h6">
+        <Typography
+          className={classes.root}
+          variant="h6"
+          style={{ textAlign: 'left' }}
+        >
           Overview:
         </Typography>
-        <Typography className={classes.root} variant="body1">
+        <Typography
+          className={classes.root}
+          variant="body1"
+          style={{ textAlign: 'left' }}
+        >
           {movie.description}
         </Typography>
       </div>
