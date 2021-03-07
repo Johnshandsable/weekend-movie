@@ -16,8 +16,13 @@ function Nav() {
       marginRight: theme.spacing(2),
     },
     title: {
+      fontFamily: 'Spicy Rice',
       textAlign: 'left',
       flexGrow: 1,
+    },
+    buttonFont: {
+      fontFamily: 'Spicy Rice',
+      fontSize: '1.25rem',
     },
   }));
 
@@ -28,10 +33,20 @@ function Nav() {
         <Typography variant="h5" className={classes.title}>
           Movies Saga
         </Typography>
-        <Button component={Link} to="/" color="inherit">
+        <Button
+          className={classes.buttonFont}
+          component={Link}
+          to="/"
+          color="inherit"
+        >
           Home
         </Button>
-        <Button component={Link} to="/addmovie" color="inherit">
+        <Button
+          className={classes.buttonFont}
+          component={Link}
+          to="/addmovie"
+          color="inherit"
+        >
           Add Movie
         </Button>
       </Toolbar>

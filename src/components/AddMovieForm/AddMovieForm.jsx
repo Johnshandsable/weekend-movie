@@ -76,7 +76,12 @@ function AddMovieForm() {
         alignItems="center"
       >
         <Grid item xs={3}>
-          <Typography variant="h5">Add Movie</Typography>
+          <Typography
+            variant="h5"
+            style={{ fontFamily: 'Spicy Rice', color: '#dfe6e9' }}
+          >
+            Add Movie
+          </Typography>
           <FormControl
             onSubmit={handleSave}
             className={classes.formControl}
