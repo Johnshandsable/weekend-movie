@@ -8,6 +8,9 @@ This application is a full-stack application allowing users to view movies from 
 
 ## Screen Shot
 
+![Home Page](./screencaps/screen1.png)
+![Add Movie Page](./screencaps/screen2.png)
+
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/en/)
