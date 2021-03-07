@@ -3,10 +3,6 @@ html {
   color: white;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 .spacing {
   margin-top: 90px;
   margin-left: 20px;

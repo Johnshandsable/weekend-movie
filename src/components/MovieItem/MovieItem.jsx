@@ -8,7 +8,8 @@ import Typography from '@material-ui/core/Typography';
 function MovieItem({ movie }) {
   const dispatch = useDispatch();
   const history = useHistory();
-  let [toggleHide, setToggleHide] = useState(true);
+
+  console.table(movie);
 
   const handleImageClick = ({ movie }) => {
     dispatch({
@@ -16,14 +17,6 @@ function MovieItem({ movie }) {
       payload: movie,
     });
     history.push(`/details/`);
-  };
-
-  const handleToggle = () => {
-    if (toggleHide) {
-      setToggleHide = false;
-      return;
-    }
-    setToggleHide = true;
   };
 
   return (
