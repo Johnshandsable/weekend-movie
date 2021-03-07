@@ -1,6 +1,6 @@
 html {
-  background-color: #34495e;
-  color: white;
+  background-color: #2d3436;
+  color: #74b9ff;
 }
 
 .spacing {
@@ -12,8 +12,7 @@ html {
 .movie {
   background-color: #2c3e50;
   box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.1);
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  border-radius: 5px;
   position: relative;
   width: 250px;
   margin: 1rem;
@@ -22,6 +21,7 @@ html {
 
 .movie-container {
   margin-top: 100px;
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
 }
