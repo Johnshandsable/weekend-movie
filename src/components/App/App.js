@@ -11,6 +11,7 @@ import Nav from '../Nav/Nav';
 import AddMovieForm from '../AddMovieForm/AddMovieForm';
 
 function App() {
+  // Theme for Material UI Components
   const theme = createMuiTheme({
     palette: {
       type: 'dark',

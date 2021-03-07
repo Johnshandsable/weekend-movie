@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './components/App/App.js';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
+
+// Styling
+import './index.css';
+import 'typeface-roboto';
 
 // Provider allows us to use redux within our react app
 import { Provider } from 'react-redux';

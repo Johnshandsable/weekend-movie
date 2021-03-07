@@ -2,6 +2,7 @@ import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
+// MATERIAL UI
 import { makeStyles } from '@material-ui/core/styles';
 import {
   Button,
@@ -61,7 +62,7 @@ function AddMovieForm() {
   const handleChange = (event) => {
     const property = event.target.name; // OK
     newMovie[property] = event.target.value; // OK
-    setNewMovie({ ...newMovie }); // SOMETHING GOES WRONG
+    setNewMovie({ ...newMovie });
   };
 
   return (
