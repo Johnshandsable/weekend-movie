@@ -41,6 +41,7 @@ function AddMovieForm() {
     genre_id: 1,
   });
 
+  // Handles saving a new movie to the database
   const handleSave = (evt) => {
     evt.preventDefault();
     dispatch({
@@ -55,10 +56,12 @@ function AddMovieForm() {
     });
   };
 
+  // If the user clicks the cancel button, it navigates them back to the landing page
   const handleCancel = () => {
     history.push('/');
   };
 
+  // Handles all changes made to inputs and updates the local state before sending to redux
   const handleChange = (event) => {
     const property = event.target.name; // OK
     newMovie[property] = event.target.value; // OK
@@ -155,6 +158,7 @@ function AddMovieForm() {
           </FormControl>
         </Grid>
       </Grid>
+      {/* An SVG which styles the bottom of the page */}
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#a29bfe"

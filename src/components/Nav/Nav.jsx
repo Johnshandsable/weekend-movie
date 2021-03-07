@@ -19,6 +19,7 @@ function Nav() {
       fontFamily: 'Spicy Rice',
       textAlign: 'left',
       flexGrow: 1,
+      fontSize: '2rem',
     },
     buttonFont: {
       fontFamily: 'Spicy Rice',
@@ -28,11 +29,14 @@ function Nav() {
 
   const classes = useStyles();
   return (
+    // Fixed allows us to scroll down with the Appbar still being available
     <AppBar position="fixed">
       <Toolbar>
+        {/* Title for Appbar */}
         <Typography variant="h5" className={classes.title}>
           Movies Saga
         </Typography>
+        {/* Buttons acting as Links */}
         <Button
           className={classes.buttonFont}
           component={Link}
