@@ -6,9 +6,10 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 
 // Components
+import AddMovieForm from '../AddMovieForm/AddMovieForm';
+import Footer from '../Footer/Footer';
 import MovieList from '../MovieList/MovieList';
 import Nav from '../Nav/Nav';
-import AddMovieForm from '../AddMovieForm/AddMovieForm';
 
 function App() {
   // Theme for Material UI Components
@@ -35,6 +36,7 @@ function App() {
             {/* Add Movie page */}
             <Route path="/addmovie" component={AddMovieForm} />
           </Switch>
+          <Footer />
         </Router>
       </ThemeProvider>
     </div>
