@@ -16,7 +16,7 @@ function App() {
           {/* Home/Movie List Page */}
           <Route path="/" component={MovieList} exact />
           {/* Details page */}
-          <Route path="/details" component={Details} exact />
+          <Route path="/details" component={Details} />
           {/* Add Movie page */}
           <Route path="/addmovie" component={AddMovieForm} />
         </Switch>

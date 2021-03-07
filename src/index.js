@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App.js';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
+
 // Provider allows us to use redux within our react app
 import { Provider } from 'react-redux';
+// import history from './history';
 import logger from 'redux-logger';
+
 // Import saga middleware
 import createSagaMiddleware from 'redux-saga';
-import { takeEvery, put } from 'redux-saga/effects';
+import { takeEvery, put, call } from 'redux-saga/effects';
 import axios from 'axios';
 
 // Create the rootSaga generator function
@@ -29,12 +32,17 @@ function* fetchAllMovies() {
   }
 }
 
+// function forwardTo(location) {
+//   history.push(location);
+// }
+
 function* fetchOneMovie(action) {
   try {
     const movieId = action.payload.id;
     const movie = yield axios.get(`/api/movie/${movieId}`);
     console.log('GOT A DATABASE RESPONSE - ', movie.data);
     yield put({ type: 'SET_MOVIE', payload: movie.data });
+    // yield call(forwardTo, '/details');
   } catch (err) {
     console.error('error fetching one movie', err);
   }

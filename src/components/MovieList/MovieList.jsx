@@ -17,20 +17,11 @@ function MovieList() {
   }, []);
 
   return (
-    <>
-      <div className="spacing"></div>
-      <Grid
-        container
-        spacing={3}
-        direction="row"
-        justify="center"
-        alignItems="center"
-      >
-        {movies.map((movie, i) => {
-          return <MovieItem key={i} movie={movie} />;
-        })}
-      </Grid>
-    </>
+    <div className="movie-container">
+      {movies.map((movie, i) => {
+        return <MovieItem key={i} movie={movie} />;
+      })}
+    </div>
   );
 }
 
