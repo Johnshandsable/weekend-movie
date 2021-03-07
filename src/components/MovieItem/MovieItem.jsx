@@ -1,23 +1,14 @@
-import { useHistory } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { useState } from 'react';
-
-import InfoIcon from '@material-ui/icons/Info';
+import { makeStyles } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 
 function MovieItem({ movie }) {
-  const dispatch = useDispatch();
-  const history = useHistory();
+  const useStyles = makeStyles({
+    root: {
+      marginTop: 20,
+    },
+  });
 
-  console.table(movie);
-
-  const handleImageClick = ({ movie }) => {
-    dispatch({
-      type: 'FETCH_MOVIE',
-      payload: movie,
-    });
-    history.push(`/details/`);
-  };
+  const classes = useStyles();
 
   return (
     <div className="movie">
@@ -31,8 +22,12 @@ function MovieItem({ movie }) {
       </div>
 
       <div className="movie-overview">
-        <Typography variant="subtitle1">Overview</Typography>
-        <Typography variant="body1">{movie.description}</Typography>
+        <Typography className={classes.root} variant="h6">
+          Overview:
+        </Typography>
+        <Typography className={classes.root} variant="body1">
+          {movie.description}
+        </Typography>
       </div>
     </div>
   );
