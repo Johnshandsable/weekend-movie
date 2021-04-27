@@ -4,7 +4,7 @@
 
 _Duration: 2 Day Sprint_
 
-This application is a full-stack application allowing users to view movies from a database, and add new movies to the existing database.
+Movie Sagas is a full-stack application allowing users to view movies from a database, add new movies to the existing database, and display all the data in a user-friendly way. 
 
 ## Screen Shot
 
